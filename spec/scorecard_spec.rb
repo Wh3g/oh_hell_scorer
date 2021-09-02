@@ -6,4 +6,7 @@ describe Scorecard do
   it "returns 15 for bid 1 tricks 1" do
     expect(subject.hand_score(1,1)).to eq 15
   end
+  it "loses points when bid not made" do
+    expect(subject.hand_score(1,0)).to eq -5
+  end
 end
