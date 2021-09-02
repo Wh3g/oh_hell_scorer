@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class Scorecard
   attr_reader :scores
-  
+
   def initialize
     @scores = []
   end
@@ -8,7 +10,7 @@ class Scorecard
   def hand_score(bid, tricks)
     if bid == tricks
       @scores << calc_score_bid_made(tricks)
-    elsif bid > tricks 
+    elsif bid > tricks
       @scores << calc_score_bid_not_made(bid - tricks)
     elsif tricks > bid
       @scores << calc_score_bid_not_made(tricks - bid)
@@ -16,6 +18,7 @@ class Scorecard
   end
 
   private
+
   def calc_score_bid_made(tricks)
     10 + (tricks * 5)
   end
