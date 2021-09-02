@@ -1,15 +1,18 @@
 require 'player'
 
 describe Player do
+  subject { Player.new(name: "John") }
+
   describe "#initialize" do
     it "saves a name" do
-      player = Player.new(name: "John")
-      expect(player.name).to eq "John"
+      expect(subject.name).to eq "John"
     end
-
-    # it "saves a score" do
-    #   expect(subject.scores).to eq []
-    # end
   end
 
+  describe "#print_scores" do
+    it "calls Scorecard.scores" do
+      expect_any_instance_of(Scorecard).to receive(:scores)
+      subject.print_scores
+    end
+  end
 end
