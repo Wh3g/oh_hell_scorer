@@ -4,6 +4,8 @@ class Scorecard
       calc_score_bid_made(tricks)
     elsif bid > tricks 
       calc_score_bid_not_made(bid - tricks)
+    elsif tricks > bid
+      calc_score_bid_not_made(tricks - bid)
     end
   end
 
