@@ -12,4 +12,12 @@ class Game
   def add_player(name)
     @players << Player.new(name: name)
   end
+
+  def game_scores
+    scores = []
+    @players.each do | player |
+      scores << player.print_scores
+    end
+    scores
+  end
 end

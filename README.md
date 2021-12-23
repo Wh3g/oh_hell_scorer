@@ -24,4 +24,8 @@ I want to save my scores.
 As a player,
 So I can play the game with others,
 I want to create a new game and add players.
+
+As a player,
+So I know who wins the game,
+I want to see the scores for each player in the game.
 ```
