@@ -13,4 +13,8 @@ class Player
   def print_scores
     @scorecard.scores
   end
+
+  def add_score(bid, tricks)
+    @scorecard.hand_score(bid, tricks)
+  end
 end

@@ -28,4 +28,8 @@ I want to create a new game and add players.
 As a player,
 So I know who wins the game,
 I want to see the scores for each player in the game.
+
+As a scorekeeper,
+So I can keep score,
+I want to choose a specific player and add to their score.
 ```

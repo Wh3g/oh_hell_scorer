@@ -20,4 +20,9 @@ class Game
     end
     scores
   end
+
+  def add_score(name, bid, tricks)
+    player = @players.find { | player | player.name == name }
+    player.add_score(bid, tricks)
+  end
 end

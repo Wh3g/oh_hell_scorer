@@ -17,4 +17,11 @@ describe Player do
       subject.print_scores
     end
   end
+
+  describe '#add_score' do
+    it 'calls Scorecard.hand_score' do
+      expect_any_instance_of(Scorecard).to receive(:hand_score)
+      subject.add_score(0, 0)
+    end
+  end
 end

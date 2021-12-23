@@ -26,6 +26,13 @@ describe Game do
           subject.game_scores
         end
       end
+
+      describe '#add_score' do
+        it "adds a score for a player" do
+          expect(subject.players[0]).to receive(:add_score)
+          subject.add_score('john', 1, 1)
+        end
+      end
     end
   end
 end
