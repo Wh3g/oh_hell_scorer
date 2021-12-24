@@ -22,7 +22,12 @@ class Game
   end
 
   def add_score(name, bid, tricks)
-    player = @players.find { | player | player.name == name }
+    player = player_select(name)
     player.add_score(bid, tricks)
+  end
+
+  private
+  def player_select(name)
+    @players.find { | player | player.name == name }
   end
 end
