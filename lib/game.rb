@@ -11,6 +11,9 @@ class Game
   end
 
   def add_player(name)
+    unless player_select(name).nil?
+      fail "Sorry, that name is already taken"
+    end
     @players << Player.new(name: name)
   end
 

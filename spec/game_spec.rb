@@ -13,6 +13,10 @@ describe Game do
       it 'adds a player' do
         expect(subject.players).to eq(@player_1)
       end
+
+      it 'has unique player names' do
+        expect{ subject.add_player('john') }.to raise_error 'Sorry, that name is already taken'
+      end
     end
 
     context 'with 2 players' do
