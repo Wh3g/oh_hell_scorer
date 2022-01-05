@@ -36,6 +36,10 @@ describe Game do
           expect(subject.players[0]).to receive(:add_score)
           subject.add_score('john', 1, 1)
         end
+
+        it "raises error when name doesn't match" do
+          expect{ subject.add_score('jon', 1, 1) }.to raise_error 'Sorry, that name is incorrect'
+        end
       end
     end
   end

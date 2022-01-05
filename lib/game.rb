@@ -27,6 +27,9 @@ class Game
 
   def add_score(name, bid, tricks)
     player = player_select(name)
+    if player.nil?
+      fail 'Sorry, that name is incorrect'
+    end
     player.add_score(bid, tricks)
   end
 
