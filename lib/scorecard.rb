@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Calculates and saves the scores for each player
 class Scorecard
   attr_reader :scores
 

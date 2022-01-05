@@ -4,7 +4,6 @@ require 'game'
 
 describe Game do
   context 'with 1 player' do
-    
     before do
       @player_1 = subject.add_player('john')
     end
@@ -15,7 +14,7 @@ describe Game do
       end
 
       it 'has unique player names' do
-        expect{ subject.add_player('john') }.to raise_error 'Sorry, that name is already taken'
+        expect { subject.add_player('john') }.to raise_error 'Sorry, that name is already taken'
       end
     end
 
@@ -24,7 +23,7 @@ describe Game do
         @player_2 = subject.add_player('james')
       end
       describe '#game_scores' do
-        it "prints the players\'s scores" do
+        it "prints the players' scores" do
           expect(subject.players[0]).to receive(:print_scores)
           expect(subject.players[1]).to receive(:print_scores)
           subject.game_scores
@@ -32,13 +31,13 @@ describe Game do
       end
 
       describe '#add_score' do
-        it "adds a score for a player" do
+        it 'adds a score for a player' do
           expect(subject.players[0]).to receive(:add_score)
           subject.add_score('john', 1, 1)
         end
 
         it "raises error when name doesn't match" do
-          expect{ subject.add_score('jon', 1, 1) }.to raise_error 'Sorry, that name is incorrect'
+          expect { subject.add_score('jon', 1, 1) }.to raise_error 'Sorry, that name is incorrect'
         end
       end
     end

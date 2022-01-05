@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Creates the player which saves the scorecard
 class Player
   attr_reader :name
 
