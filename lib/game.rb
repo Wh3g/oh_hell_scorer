@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'scorecard'
+require_relative 'player'
 
 class Game
   attr_reader :players

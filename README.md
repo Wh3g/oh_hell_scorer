@@ -33,3 +33,19 @@ As a scorekeeper,
 So I can keep score,
 I want to choose a specific player and add to their score.
 ```
+
+## Installation
+
+In order to run this program on your own machine, you can simply clone this repository and run the following commands to install the relevant gems:
+
+```
+cd oh_hell_scorer
+bundle install # This installs the gems in the Gemfile
+irb
+  > require "./lib/game"
+```
+
+## Testing
+
+This program is testing using RSpec, which means that you can run all the tests by running the command `rspec` in the directory, this will also show you the test coverage for the program as well.
+
