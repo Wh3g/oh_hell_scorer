@@ -1,3 +1,10 @@
+<form name="add player" action="/player" method="post">
+  <input type="text" name="player_name">
+  <input type="submit" value="Submit">
+</form>
+
+<br>
+
 <% @game.players.each do | player | %>
-  <%= player.name %>
+  <%= player.name %><br>
 <% end %>
