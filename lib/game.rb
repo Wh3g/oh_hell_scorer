@@ -32,6 +32,14 @@ class Game
     player.add_score(bid, tricks)
   end
 
+  def game_length
+    scores_lengths = []
+    game_scores.each do | player_scores |
+      scores_lengths << player_scores.length
+    end
+    scores_lengths.max
+  end
+
   private
 
   def player_select(name)

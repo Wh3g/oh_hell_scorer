@@ -9,21 +9,29 @@
   <thead>
     <tr>
       <% @game.players.each do | player | %>
-        <th><%= player.name %><th>
+        <th><%= player.name %></th>
       <% end %>
     </tr>
-    <tr><td><%= @game.game_scores %></td></tr>
+  </thead>
+  <tbody>
+    <% @game.game_length.times do | index | %>
+      <tr>
+        <% @game.game_scores.each do | player_score | %>
+          <td><%= player_score[index]%></td>
+        <% end %>
+      </tr>
+    <% end %>
     <tr>
       <% @game.players.each do | player | %>
         <td>
           <form name="score" action="/score" method="post">
-            <input type="text" name="bid">
-            <input type="text" name="tricks">
-            <input type="hidden" name="player_name" value="<%= player.name %>">
-            <input type="submit" value="Submit">
+            <input id="<%= player.name %>_bid" type="text" name="bid">
+            <input id="<%= player.name %>_tricks"type="text" name="tricks">
+            <input id="<%= player.name %>_name"type="hidden" name="player_name" value="<%= player.name %>">
+            <input id="<%= player.name %>_submit" type="submit" value="Submit">
           </form>
-        <td>
+        </td>
       <% end %>
     </tr>
-  </thead>
+  </tbody>
 </table>
