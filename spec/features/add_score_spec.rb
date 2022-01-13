@@ -5,7 +5,6 @@ feature 'can add score for each player' do
     visit '/'
     create_player('john')
     add_score('john')
-    p "hello"
     expect(page).to have_content '15'
   end
 
