@@ -1,10 +1,29 @@
 <form name="add player" action="/player" method="post">
   <input type="text" name="player_name">
-  <input type="submit" value="Submit">
+  <input type="submit" value="Add player">
 </form>
 
 <br>
 
-<% @game.players.each do | player | %>
-  <%= player.name %><br>
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <% @game.players.each do | player | %>
+        <th><%= player.name %><th>
+      <% end %>
+    </tr>
+    <tr><td><%= @game.game_scores %></td></tr>
+    <tr>
+      <% @game.players.each do | player | %>
+        <td>
+          <form name="score" action="/score" method="post">
+            <input type="text" name="bid">
+            <input type="text" name="tricks">
+            <input type="hidden" name="player_name" value="<%= player.name %>">
+            <input type="submit" value="Submit">
+          </form>
+        <td>
+      <% end %>
+    </tr>
+  </thead>
+</table>
