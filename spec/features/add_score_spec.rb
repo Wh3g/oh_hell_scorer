@@ -13,7 +13,6 @@ feature 'can add score for each player' do
     create_player('john')
     create_player('james')
     add_score('james')
-    click_button 'james_submit'
     expect(page).to have_content '15'
   end
 end
