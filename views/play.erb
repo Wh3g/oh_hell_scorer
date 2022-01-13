@@ -25,8 +25,8 @@
       <% @game.players.each do | player | %>
         <td>
           <form name="score" action="/score" method="post">
-            <input id="<%= player.name %>_bid" type="text" name="bid">
-            <input id="<%= player.name %>_tricks"type="text" name="tricks">
+            <input id="<%= player.name %>_bid" type="number" name="bid">
+            <input id="<%= player.name %>_tricks"type="number" name="tricks">
             <input id="<%= player.name %>_name"type="hidden" name="player_name" value="<%= player.name %>">
             <input id="<%= player.name %>_submit" type="submit" value="Submit">
           </form>

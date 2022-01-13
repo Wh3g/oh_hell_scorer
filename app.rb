@@ -28,7 +28,10 @@ class OhHellScorer < Sinatra::Base
 
   post '/score' do
     @game = $game
-    @game.add_score(params[:player_name], params[:bid].to_i, params[:tricks].to_i)
+    @game.add_score(
+      params[:player_name], 
+      params[:bid].to_i, 
+      params[:tricks].to_i)
     redirect '/play'
   end
 end
