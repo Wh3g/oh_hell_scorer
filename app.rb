@@ -1,10 +1,11 @@
+# frozen_string_literal: true
+
 require 'sinatra/base'
 require 'sinatra/reloader'
 require 'capybara'
 require './lib/game'
 
 class OhHellScorer < Sinatra::Base
-
   configure :development do
     register Sinatra::Reloader
   end

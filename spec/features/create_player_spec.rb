@@ -1,20 +1,22 @@
-feature "create player" do
-  context "with 1 player" do
+# frozen_string_literal: true
+
+feature 'create player' do
+  context 'with 1 player' do
     before do
       visit('/')
-      create_player("John")
+      create_player('John')
     end
 
-    scenario "create a new player in the game" do
-      expect(page).to have_content "John"
+    scenario 'create a new player in the game' do
+      expect(page).to have_content 'John'
     end
-    context "with 2 players" do
+    context 'with 2 players' do
       before do
-        create_player("James")
+        create_player('James')
         page
       end
-      scenario "can create multiple players" do
-        expect(page).to have_content "James"
+      scenario 'can create multiple players' do
+        expect(page).to have_content 'James'
       end
     end
   end
