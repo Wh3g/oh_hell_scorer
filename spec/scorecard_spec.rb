@@ -4,11 +4,11 @@ require 'scorecard'
 
 describe Scorecard do
   describe '#initialize' do
-    it 'saves the scores' do
+    it 'saves the scores cumalitively' do
       subject.hand_score(0, 0)
       subject.hand_score(1, 1)
       subject.hand_score(1, 0)
-      expect(subject.scores).to eq [10, 15, -5]
+      expect(subject.scores).to eq [10, 25, 20]
     end
   end
 
