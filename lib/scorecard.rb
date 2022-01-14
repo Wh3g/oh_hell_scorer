@@ -10,21 +10,21 @@ class Scorecard
 
   def hand_score(bid, tricks)
     if bid == tricks
-      @scores << calc_score_bid_made(tricks) + @scores.last.to_i
+      @scores << calc_score_bid_made(tricks)
     elsif bid > tricks
-      @scores << calc_score_bid_not_made(bid - tricks) + @scores.last.to_i
+      @scores << calc_score_bid_not_made(bid - tricks)
     elsif tricks > bid
-      @scores << calc_score_bid_not_made(tricks - bid) + @scores.last.to_i
+      @scores << calc_score_bid_not_made(tricks - bid)
     end
   end
 
   private
 
   def calc_score_bid_made(tricks)
-    10 + (tricks * 5)
+    (10 + (tricks * 5)) + @scores.last.to_i
   end
 
   def calc_score_bid_not_made(trick_diff)
-    trick_diff * -5
+    (trick_diff * -5) + @scores.last.to_i
   end
 end
