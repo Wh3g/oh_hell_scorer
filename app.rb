@@ -16,7 +16,8 @@ class OhHellScorer < Sinatra::Base
   end
 
   post '/player' do
-    $game.add_player(params[:player_name])
+    @game = $game
+    @game.add_player(params[:player_name])
     redirect '/play'
   end
 

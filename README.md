@@ -49,3 +49,12 @@ irb
 
 This program is testing using RSpec, which means that you can run all the tests by running the command `rspec` in the directory, this will also show you the test coverage for the program as well.
 
+## Approach
+
+In building this program, I used TDD practices where I would write a simple test, and then write code that could pass the tests in the simplest way.
+
+I started with the the `Scorecard` class, which calculates the scores in the `#hand_score` method, and saves it in the `@scores`.
+
+Next there is the `Player` class, which has two instance variables, `@name`, which is the name of each player, and `@scorecard` which saves a `Scorecard` instance to each player.
+
+Finally there is the `Game` class, where the user can create new `Player` instances and they will be saved to `@players`.
